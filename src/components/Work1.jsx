@@ -5,8 +5,8 @@ import Image2 from '../assets/portfolio-img2.png';
 import Image3 from '../assets/portfolio-img3.png';
 
 const projects = [
-  { id: 1, image: Image1, alt: "Hackathon Project",title:"Sarathi" },
-  { id: 2, image: Image2, alt: "College Project",title:"Generative AI App" },
+  { id: 1, image: Image1, alt: "Hackathon Project", title: "Sarathi" },
+  { id: 2, image: Image2, alt: "College Project", title: "Generative AI App" },
 ];
 
 const Work1 = () => {
@@ -25,24 +25,28 @@ const Work1 = () => {
             </button>
           </div>
           {/* Image Section */}
+        
           <div className='group relative overflow-hidden border-2 border-white/50 rounded-xl'>
             {/* overlay */}
-            <div className='group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300'></div>
-            {/* img */}
-            <img
-              className='group-hover:scale-125 transition-all duration-500'
-              src={Image3}
-              alt='image 3 alt'
-            />
-            {/* pretitle */}
-            <div className='absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-50'>
-              <span className='text-gradient'>Full Stack Project</span>
-            </div>
-            {/* title */}
-            <div className='absolute -bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50'>
-              <span className='text-3xl text-white'>MERN Estate App</span>
-            </div>
+            <a href='https://mern-estate-app-wjtr.onrender.com' target="_blank" rel="noopener noreferrer">
+              <div className='group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300'></div>
+              {/* img */}
+              <img
+                className='group-hover:scale-125 transition-all duration-500'
+                src={Image3}
+                alt='MERN Estate App Image'
+              />
+              {/* pretitle */}
+              <div className='absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-50'>
+                <span className='text-gradient'>Full Stack Project</span>
+              </div>
+              {/* title */}
+              <div className='absolute -bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50'>
+                <span className='text-3xl text-white'>MERN Estate App</span>
+              </div>
+            </a>
           </div>
+        
         </div>
 
         {/* side 2 */}
