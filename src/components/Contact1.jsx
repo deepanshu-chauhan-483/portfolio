@@ -3,6 +3,9 @@ import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import {motion} from 'framer-motion';
+import {fadeIn} from '../variants';
+
 const Contact1 = () => {
   const form = useRef();
 
@@ -72,15 +75,23 @@ const Contact1 = () => {
     <div className="container mx-auto my-auto">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-0">
         <div className="lg:w-1/2 mb-8 lg:mb-0">
-          <h2 className="h2 text-3xl font-bold text-pink-500 font-secondary">GET IN TOUCH</h2>
-          <h1 className="h1 text-5xl font-bold font-tertiary">
+          <motion.h2  variants={fadeIn('right', 0.2)}
+          initial="hidden"
+          whileInView="show"
+          className="h2 text-3xl font-bold text-pink-500 font-secondary">GET IN TOUCH</motion.h2>
+          <motion.h1  variants={fadeIn('right', 0.5)}
+          initial="hidden"
+          whileInView="show" className="h1 text-5xl font-bold font-tertiary">
             Let's work
             <br />
             together!
-          </h1>
+          </motion.h1>
         </div>
 
-        <div className="lg:w-1/2 w-full max-w-md">
+        <motion.div  variants={fadeIn('left', 0.5)}
+          initial="hidden"
+          whileInView="show"
+           className="lg:w-1/2 w-full max-w-md">
           <form
             onSubmit={handleSubmit}
             ref={form}
@@ -135,7 +146,7 @@ const Contact1 = () => {
               Send message
             </button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
