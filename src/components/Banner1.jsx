@@ -8,9 +8,9 @@ const Banner1 = () => {
     <div className='container mx-auto' id='banner'>
       <div className='flex flex-grow-0'>
         <div className='flex flex-col my-10'>
-          <h1 className='h1 mt-10 mb-5 font-bold'>Deepanshu</h1>
-          <h1 className='h1 py-5 font-tertiary text-gradient font-bold'>Chauhan</h1>
-          <h2 className='h2 tracking-wide'>I am a <span className='text-[#FF56F6] '>Developer</span></h2>
+          <h1 className='font-tertiary text-[50px] tracking-[10%] uppercase mt-10  font-bold xl:h1'>Deepanshu</h1>
+          <h1 className='xl:h1 py-5 font-tertiary text-[50px] text-gradient font-bold'>Chauhan</h1>
+          <h2 className=' font-primary text-[24px] mb-6 tracking-[10%] uppercase xl:h2'>I am a <span className='text-[#FF56F6] '>Developer</span></h2>
           <p className='h'>Computer Science student at Galgotias College of Engineering and Technology. Currently studying in the field of Artifial Intelligenece and Machine Learning.</p>
           <div className='flex flex-row button-container mt-5 mb-10 gap-5'>
           <Link to='contact' smooth={true} spy={true}>
