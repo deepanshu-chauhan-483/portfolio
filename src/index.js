@@ -8,6 +8,8 @@ import Banner from './components/Banner';
 import Services from './components/Services';
 import Work from './components/Work';
 import Contact from './components/Contact';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const router=createBrowserRouter(
   createRoutesFromElements(
@@ -28,5 +30,18 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router}/>
+    <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="colored"
+/>
+    
   </React.StrictMode>
 );

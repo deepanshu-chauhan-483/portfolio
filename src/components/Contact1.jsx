@@ -1,40 +1,95 @@
-import {useState} from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact1 = () => {
+  const form = useRef();
+
+  // State to manage form data and email sent status
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
-  })
+    message: '',
+  });
 
+  const [emailSent, setEmailSent] = useState(null); // State for notification
+
+  // Handling input field changes
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prevState => ({
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
 
+  // Form submit handler
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-  }
+    e.preventDefault();
+
+    // EmailJS service call
+    emailjs
+      .sendForm('service_1', 'template_o21lsnb', form.current, {
+        publicKey: 'NL5Al0dmgUdJX01mE',
+      })
+      .then(
+        () => {
+          setEmailSent(true); // Set emailSent to true on success
+          setFormData({ name: '', email: '', message: '' }); // Clear form data state
+          e.target.reset(); // Reset the form fields
+          
+          // Show success toast notification
+          toast.success('Email Sent!', {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: 'colored',
+          });
+        },
+        (error) => {
+          setEmailSent(false); // Set emailSent to false on failure
+          
+          // Show error toast notification
+          toast.error('Email not sent. Please try again.', {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: 'colored',
+          });
+          console.log('FAILED...', error.text);
+        }
+      );
+  };
+
   return (
     <div className="container mx-auto my-auto">
-      
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-0">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-0">
         <div className="lg:w-1/2 mb-8 lg:mb-0">
           <h2 className="h2 text-3xl font-bold text-pink-500 font-secondary">GET IN TOUCH</h2>
-          <h1 className="h1 text-5xl font-bold  font-tertiary">
+          <h1 className="h1 text-5xl font-bold font-tertiary">
             Let's work
             <br />
             together!
           </h1>
         </div>
+
         <div className="lg:w-1/2 w-full max-w-md">
-          <form onSubmit={handleSubmit} className="bg-transparent rounded-lg p-8 shadow-lg">
+          <form
+            onSubmit={handleSubmit}
+            ref={form}
+            className="bg-transparent rounded-lg p-8 shadow-lg"
+          >
             <div className="mb-6">
-              <label htmlFor="name" className="block text-md font-medium mb-2">Your name</label>
+              <label htmlFor="name" className="block text-md font-medium mb-2">
+                Your name
+              </label>
               <input
                 type="text"
                 id="name"
@@ -45,8 +100,11 @@ const Contact1 = () => {
                 required
               />
             </div>
+
             <div className="mb-6">
-              <label htmlFor="email" className="block text-md font-medium mb-2">Your email</label>
+              <label htmlFor="email" className="block text-md font-medium mb-2">
+                Your email
+              </label>
               <input
                 type="email"
                 id="email"
@@ -57,8 +115,11 @@ const Contact1 = () => {
                 required
               />
             </div>
+
             <div className="mb-6">
-              <label htmlFor="message" className="block text-md font-medium mb-2">Your message</label>
+              <label htmlFor="message" className="block text-md font-medium mb-2">
+                Your message
+              </label>
               <textarea
                 id="message"
                 name="message"
@@ -69,18 +130,15 @@ const Contact1 = () => {
                 required
               ></textarea>
             </div>
-            <button
-              type="submit"
-              className="btn btn-lg"
-            >
+
+            <button type="submit" className="btn btn-lg">
               Send message
             </button>
           </form>
         </div>
       </div>
-      </div>
-
-  )
+    </div>
+  );
 };
 
 export default Contact1;
