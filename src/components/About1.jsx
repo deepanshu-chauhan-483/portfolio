@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import Image from '../assets/lillustration.svg';
+import Image from '../assets/img1.png';
 
 const About1 = () => {
   return (
@@ -12,7 +12,7 @@ const About1 = () => {
           <img
             src={Image}
             alt="Developer Profile"
-            className="w-full max-w-md mx-auto"
+            className="w-auto max-w-md mx-auto"
           />
         </div>
         {/* Right Content Section */}
