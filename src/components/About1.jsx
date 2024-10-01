@@ -7,9 +7,9 @@ import CountUp from 'react-countup';
 
 const About1 = () => {
   return (
-    <div className='container mx-auto' id='about'>
+    <div className='container mx-auto'>
      
-      <div className="flex flex-col md:flex-row items-center justify-between my-10">
+      <div className="flex flex-col flex-grow-0 md:flex-row items-center justify-between">
         {/* Left Image Section */}
         <motion.div className="hidden md:block md:w-1/2 mb-8 md:mb-0"
          variants={fadeIn('right', 0.2)}
@@ -18,7 +18,7 @@ const About1 = () => {
           <img
             src={Image}
             alt="Developer Profile"
-            className="w-auto max-w-md mx-auto"
+            className="w-[400px] h-[600px] rounded-xl"
           />
         </motion.div>
         {/* Right Content Section */}

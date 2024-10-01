@@ -8,7 +8,7 @@ import Banner from './components/Banner';
 import Services from './components/Services';
 import Work from './components/Work';
 import Contact from './components/Contact';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const router=createBrowserRouter(

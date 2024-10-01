@@ -21,13 +21,13 @@ const App = () => {
       <div id="about" className="section">
         <About1 />
       </div>
-      <div id="services" className="section">
+      <div id="services" className="section my-[100px]">
         <Services1 />
       </div>
-      <div id="work" className="section">
+      <div id="work" className="section my-[100px]">
         <Work1 />
       </div>
-      <div id="contact" className="section">
+      <div id="contact" className="section mt-[100px] mb-[50px]">
         <Contact1 />
       </div>
       

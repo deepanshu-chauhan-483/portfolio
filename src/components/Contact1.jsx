@@ -72,9 +72,9 @@ const Contact1 = () => {
   };
 
   return (
-    <div className="container mx-auto my-auto">
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-0">
-        <div className="lg:w-1/2 mb-8 lg:mb-0">
+    <div className="container mx-auto">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-2">
+        <div className="lg:w-1/2 mb-8 lg:m-8">
           <motion.h2  variants={fadeIn('right', 0.2)}
           initial="hidden"
           whileInView="show"

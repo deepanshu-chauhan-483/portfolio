@@ -9,7 +9,7 @@ import {fadeIn} from '../variants';
 
 const Banner1 = () => {
   return (
-    <div className='container mx-auto' id='banner'>
+    <div className='container mx-auto'>
       <div className='flex flex-grow-0'>
         <div className='flex flex-col my-10'>
           <motion.h1 className='font-tertiary text-[50px] tracking-[10%] uppercase mt-10  font-bold xl:h1'
