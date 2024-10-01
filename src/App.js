@@ -15,21 +15,21 @@ const App = () => {
       <Header />
       <Nav />
       
-      <div id="home" className="section">
+      <section id="home" className="section">
         <Banner1 />
-      </div>
-      <div id="about" className="section">
+      </section>
+      <section id="about" className="section">
         <About1 />
-      </div>
-      <div id="services" className="section">
+      </section>
+      <section id="services" className="section m-[200px]">
         <Services1 />
-      </div>
-      <div id="work" className="section">
+      </section>
+      <section id="work" className="section m-[200px]">
         <Work1 />
-      </div>
-      <div id="contact" className="section">
+      </section>
+      <section id="contact" className="section mt-[200px]">
         <Contact1 />
-      </div>
+      </section>
       
       
     </div>
