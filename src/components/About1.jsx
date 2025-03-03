@@ -53,7 +53,7 @@ const About1 = () => {
               <p className="text-sm h3">Times<br />College Mentor</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-gradient mb-2"><CountUp start={0} end={4} duration={2}/><span>+</span></div>
+              <div className="text-4xl font-bold text-gradient mb-2"><CountUp start={0} end={10} duration={5}/><span>+</span></div>
               <p className="text-sm h3">Projects<br />Completed</p>
             </div>
             <div>

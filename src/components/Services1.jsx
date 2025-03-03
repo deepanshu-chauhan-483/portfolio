@@ -15,7 +15,7 @@ const services = [
   },
   {
     title: "Development",
-    description: "Building responsive and performant web applications using modern front-end technologies.",
+    description: "Building responsive and performant web applications using modern full stack technologies React, Node.js, Express.js, MongoDB",
     learnMore: "#development"
   },
   {

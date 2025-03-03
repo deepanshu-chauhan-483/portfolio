@@ -24,9 +24,10 @@ const App = () => {
       <div id="services" className="section my-[100px]">
         <Services1 />
       </div>
-      <div id="work" className="section my-[100px]">
+      <div id="work" className="section my-[150px]">
         <Work1 />
       </div>
+      
       <div id="contact" className="section mt-[100px] mb-[50px]">
         <Contact1 />
       </div>
